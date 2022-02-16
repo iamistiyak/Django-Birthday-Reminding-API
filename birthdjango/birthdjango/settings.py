@@ -13,7 +13,8 @@ SECRET_KEY = 'django-insecure-)v8pcek9y2m)l=7u9^xt*o-y3#gt0aret86miq&yn$s+e45@9i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['djangobirthreminderapi.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -32,6 +33,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -115,5 +117,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-   "http://localhost:3000"
+"https://isbirthdayreminder.herokuapp.com",
+"http://isbirthdayreminder.herokuapp.com",
 ]
+CORS_ALLOW_METHODS = ( 'GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS' ) 
+#    "http://localhost:3000"
